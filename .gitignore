@@ -1,0 +1,18 @@
+# Python virtul environment
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+# Jupiter checkpoints
+.ipynb_checkpoints/
+# macOS
+.DS_Store
+# Data file (too large fot Git)
+data/
+*.csv
+# Model checkpoints
+*.pt
+*.pth
+# Environment variables
+.env
