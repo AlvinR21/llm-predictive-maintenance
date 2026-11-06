@@ -1,6 +1,6 @@
 # Project: LLM for Predictive Maintenance (final-year capstone)
 
-BSc Computer Science final-year project, University of West London.
+BSc Computer Science final-year project, University of West London. Submission due January 2027.
 
 ## What the project is
 - A hybrid system: an LSTM model predicts Remaining Useful Life (RUL) of turbofan engines,
@@ -30,9 +30,12 @@ BSc Computer Science final-year project, University of West London.
 
 ## Current stage
 - Phase 1: Foundation (in progress). Project folder, venv, .gitignore and README are done.
-- Step 1: load and explore FD001 (`src/explore_fd001.py`).
-- Next: choose sensors, normalise, make time windows, LSTM RUL baseline,
-  then the RAG pipeline, then Streamlit.
+- Done: explore FD001 (`src/explore_fd001.py`); preprocessing with 14 sensors,
+  RUL cap 125, 30-cycle windows, 80/20 split by engine (`src/preprocess_fd001.py`);
+  baseline LSTM (`src/train_lstm.py`, target scaled 0-1, validation RMSE about 13.6).
+- Lesson logged: the first LSTM collapsed to predicting the mean because the
+  target was unscaled; fixed by scaling RUL to 0-1.
+- Next: Phase 2, the RAG pipeline (Ollama + Mistral 7B, FAISS, LangChain), then Streamlit.
 
 ## How to help me
 - I'm still building my Python confidence. Explain what code does and why,
