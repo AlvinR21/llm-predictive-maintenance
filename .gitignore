@@ -1,16 +1,18 @@
-# Python virtul environment
+# Python virtual environment
 venv/
 
 # Python cache
 __pycache__/
 *.pyc
-# Jupiter checkpoints
+# Jupyter checkpoints
 .ipynb_checkpoints/
 # macOS
 .DS_Store
-# Data file (too large fot Git)
+# Data files (too large for Git)
 data/
 *.csv
+# ...but keep the evaluation results
+!results/*.csv
 # Model checkpoints
 *.pt
 *.pth

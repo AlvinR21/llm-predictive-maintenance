@@ -1,0 +1,441 @@
+engine,model,condition,true_rul,pred_rul,abs_error,top_sensors,passages,direction_score_0to3,instrument_actions_before_guard,instrument_actions_after_guard,final_answer,MANUAL_relevant_passages_0to4,MANUAL_citations_supported_yes_no_partly,MANUAL_action_quality_0to2,MANUAL_notes
+5,mistral,llm_only,91.0,104.1,13.1,s4 rising; s12 falling; s20 rising,,3,0,0," STATUS: The engine is showing signs of degradation, with a predicted remaining useful life of 104 cycles.
+
+KEY SENSORS:
+1. s4 (T50) is rising, suggesting an increase in exhaust gas temperature, which could indicate compressor or turbine degradation.
+2. s12 (phi) is falling, indicating a decrease in the ratio of fuel flow to pressure, potentially leading to reduced engine performance.
+3. s20 (W31) is rising, possibly indicating a need for increased HPT coolant due to increased heat generation within the engine.
+
+ACTIONS:
+1. (Addresses s4) Monitor the engine closely for any further increases in exhaust gas temperature, as this could indicate a need for maintenance or repair.
+2. (Addresses s12) Consider adjusting the fuel-air ratio to compensate for the decrease in fuel flow, in an attempt to maintain engine performance.
+3. (Addresses s20) Investigate the cause of the increased HPT coolant bleed, as it may indicate an issue within the engine that requires attention.",,,,
+5,mistral,rag,91.0,104.1,13.1,s4 rising; s12 falling; s20 rising,amt_powerplant_handbook.pdf p.427; amt_powerplant_handbook.pdf p.428; C-MAPSS.pdf p.5; C-MAPSS.pdf p.2,3,1,1," STATUS: The engine shows signs of degradation and requires attention, with a predicted remaining useful life of 104 cycles.
+
+KEY SENSORS:
+1. s4 (T50, total temperature at LPT outlet): rising (+0.11) suggests potential turbine damage and/or loss of turbine efficiency [2].
+2. s12 (phi, ratio of fuel flow to Ps30): falling (-0.09) may indicate problems with the turbine section [2].
+3. s20 (W31, HPT coolant bleed): rising (+0.05) could be a symptom of engine-mounted accessory malfunction or engine bleed-air valve malfunction [2].
+
+ACTIONS:
+1. Perform a thorough inspection of the turbine section for any signs of damage (suggested by s4 and s12 changes) [2].
+2. Check the engine-mounted accessories and the engine bleed-air valve for any malfunctions (suggested by s20 changes) [2].
+3. Analyze the engine's performance data to determine if any corrective actions are necessary based on the observed symptoms (since instrument checks are not allowed) [3].
+
+It is important to note that these actions are suggestions based on the observed symptoms and the provided passages. A comprehensive maintenance plan should also consider the engine's operating history, environmental conditions, and manufacturer's guidelines.",,,,
+5,llama3.1,llm_only,91.0,104.1,13.1,s4 rising; s12 falling; s20 rising,,3,0,0,"STATUS: Engine 5 is showing signs of degradation, with a predicted remaining useful life of 104 cycles, indicating a moderate urgency for maintenance.
+
+KEY SENSORS:
+1. s4 (T50, total temperature at LPT outlet): rising (+0.11) - suggests increased heat generation in the low-pressure turbine.
+2. s12 (phi, ratio of fuel flow to Ps30): falling (-0.09) - indicates a potential decrease in fuel efficiency or an increase in pressure at the high-pressure compressor outlet.
+3. s20 (W31, HPT coolant bleed): rising (+0.05) - suggests increased cooling demand in the high-pressure turbine.
+
+ACTIONS:
+1. Inspect the low-pressure turbine for signs of wear or damage, addressing the rising temperature at the LPT outlet (s4).
+2. Investigate the fuel system for potential issues, addressing the decrease in fuel efficiency or increase in pressure at the HPC outlet (s12).
+3. Monitor the high-pressure turbine coolant system for any signs of malfunction, addressing the increased cooling demand (s20).",,,,
+5,llama3.1,rag,91.0,104.1,13.1,s4 rising; s12 falling; s20 rising,amt_powerplant_handbook.pdf p.427; amt_powerplant_handbook.pdf p.428; C-MAPSS.pdf p.5; C-MAPSS.pdf p.2,3,0,0,"STATUS: Engine 5 is predicted to have 104 cycles of remaining useful life, indicating a moderate level of urgency.
+
+KEY SENSORS:
+1. s4 (T50, total temperature at LPT outlet): rising (+0.11) - suggests increased heat generation in the low-pressure turbine.
+2. s12 (phi, ratio of fuel flow to Ps30): falling (-0.09) - suggests decreased fuel efficiency or increased fuel flow.
+3. s20 (W31, HPT coolant bleed): rising (+0.05) - suggests increased heat generation in the high-pressure turbine.
+
+ACTIONS:
+1. Monitor and adjust the engine's fuel flow to maintain optimal efficiency, as suggested by the decrease in fuel efficiency (s12) [2].
+2. Investigate and address any potential issues with the low-pressure turbine, as indicated by the rising temperature (s4) [1].
+3. Check the high-pressure turbine coolant bleed system for any blockages or leaks, as suggested by the increase in coolant flow (s20) [3].",,,,
+12,mistral,llm_only,124.0,106.7,17.3,s20 falling; s15 rising; s2 falling,,3,0,0," STATUS: The engine is showing signs of degradation, with 107 cycles remaining before predicted failure.
+
+KEY SENSORS:
+1. s20 (W31, HPT coolant bleed) falling (-0.15): This decrease suggests a potential issue with the high-pressure turbine (HPT), as the coolant bleed is used to remove heat from the HPT and a decrease may indicate increased heat or wear.
+2. s15 (BPR, bypass ratio) rising (+0.07): An increase in bypass ratio could indicate a decrease in core engine efficiency, as more air is bypassing the core and less is going through the hotter, more efficient parts of the engine.
+3. s2 (T24, total temperature at LPC outlet) falling (-0.06): A decrease in total temperature at the low-pressure compressor (LPC) outlet could indicate a problem with the LPC, as it is responsible for compressing air and increasing its temperature.
+
+ACTIONS:
+1. (Addresses s20) Monitor the high-pressure turbine for signs of increased heat or wear, such as changes in temperature or vibration.
+2. (Addresses s15) Analyze the bypass duct for potential blockages or leaks that could be affecting the bypass ratio.
+3. (Addresses s2) Inspect the low-pressure compressor for any signs of wear or damage that could be causing the decrease in temperature.",,,,
+12,mistral,rag,124.0,106.7,17.3,s20 falling; s15 rising; s2 falling,amt_powerplant_handbook.pdf p.427; amt_powerplant_handbook.pdf p.428; C-MAPSS.pdf p.5; C-MAPSS.pdf p.2,3,0,0," STATUS: The engine's health is deteriorating, with 107 cycles remaining before failure.
+KEY SENSORS:
+1. s15 (BPR, bypass ratio): rising (+0.07) - This suggests an increase in bypass air, which may indicate a decrease in engine performance and efficiency [4].
+2. s20 (W31, HPT coolant bleed): falling (-0.15) - A decrease in coolant bleed could indicate a problem with the high-pressure turbine, potentially leading to overheating and eventual failure [3].
+3. s2 (T24, total temperature at LPC outlet): falling (-0.06) - A decrease in total temperature at the low-pressure compressor outlet could indicate a problem with the compressor, potentially leading to reduced engine performance [1].
+
+ACTIONS:
+1. Inspect the high-pressure turbine for signs of wear or damage, addressing the issue with the falling coolant bleed (s20) [3].
+2. Perform a troubleshooting procedure to check for any issues with the low-pressure compressor, addressing the issue with the falling total temperature (s2) [1].
+3. If the engine's performance continues to deteriorate, consider performing a run-up test to determine the maximum allowable exhaust gas temperature and torquemeter pressure, as this could indicate turbine damage [1]. No specific passage was found for this action, but it is a general troubleshooting procedure for turbofan engines.",,,,
+12,llama3.1,llm_only,124.0,106.7,17.3,s20 falling; s15 rising; s2 falling,,3,0,0,"STATUS: Engine 12 is showing signs of degradation, with a predicted remaining useful life of 107 cycles, indicating a moderate urgency for maintenance.
+
+KEY SENSORS:
+1. s20 (W31, HPT coolant bleed): falling (-0.15) - suggests a potential issue with the high-pressure turbine (HPT) coolant system.
+2. s15 (BPR, bypass ratio): rising (+0.07) - indicates a possible increase in compressor efficiency or a change in engine operating conditions.
+3. s2 (T24, total temperature at LPC outlet): falling (-0.06) - suggests a potential issue with the low-pressure compressor (LPC) or its cooling system.
+
+ACTIONS:
+1. Inspect the HPT coolant system for any signs of leakage or blockage, addressing the potential issue with s20 (W31, HPT coolant bleed). (Addresses: s20)
+2. Monitor the engine's operating conditions and adjust the bypass ratio as necessary to maintain optimal performance, addressing the potential issue with s15 (BPR). (Addresses: s15)
+3. Investigate the LPC's cooling system for any potential issues, addressing the potential issue with s2 (T24, total temperature at LPC outlet). (Addresses: s2)",,,,
+12,llama3.1,rag,124.0,106.7,17.3,s20 falling; s15 rising; s2 falling,amt_powerplant_handbook.pdf p.427; amt_powerplant_handbook.pdf p.428; C-MAPSS.pdf p.5; C-MAPSS.pdf p.2,3,1,0,"STATUS: Engine 12 is predicted to have 107 cycles of remaining useful life, indicating a moderate level of urgency.
+
+KEY SENSORS:
+1. s20 (W31, HPT coolant bleed): falling (-0.15) - suggests potential loss of compressor or turbine efficiency.
+2. s15 (BPR, bypass ratio): rising (+0.07) - indicates possible changes in engine performance.
+3. s2 (T24, total temperature at LPC outlet): falling (-0.06) - may indicate degradation in LPC efficiency.
+
+ACTIONS:
+1. Investigate and address any potential compressor section damage, as indicated by the falling HPT coolant bleed [3].
+2. Monitor engine cycles and exhaust gas temperature (EGT) to prevent excess EGT, which can reduce turbine component life [1].
+3. Check the engine's main bearings for any signs of wear or damage, as excessive wear can cause engine performance issues [2].",,,,
+34,mistral,llm_only,7.0,6.0,1.0,s12 falling; s11 rising; s3 rising,,3,0,0," STATUS: The engine is showing signs of degradation with a predicted remaining useful life of 6 cycles.
+
+KEY SENSORS:
+1. s12 (phi, ratio of fuel flow to Ps30): falling (-0.28) - This suggests a potential issue with the engine's fuel efficiency, which could lead to power loss.
+2. s11 (Ps30, static pressure at HPC outlet): rising (+0.25) - An increase in static pressure might indicate a blockage or inefficiency in the high-pressure compressor.
+3. s3 (T30, total temperature at HPC outlet): rising (+0.24) - Higher temperatures could be a sign of increased wear or inefficiency in the high-pressure turbine.
+
+ACTIONS:
+1. (Addresses s12) Perform a fuel system check to identify any potential leaks or blockages that could be affecting fuel efficiency.
+2. (Addresses s11) Inspect the high-pressure compressor for any signs of blockage or wear that could be causing increased static pressure.
+3. (Addresses s3) Analyze the high-pressure turbine for any indications of increased wear or inefficiency that could be causing higher temperatures.",,,,
+34,mistral,rag,7.0,6.0,1.0,s12 falling; s11 rising; s3 rising,amt_powerplant_handbook.pdf p.428; amt_powerplant_handbook.pdf p.427; C-MAPSS.pdf p.5; C-MAPSS.pdf p.2,3,1,0," STATUS: The engine's health is deteriorating, and urgent maintenance is required.
+KEY SENSORS:
+1. s12 (phi, ratio of fuel flow to Ps30): falling (-0.28) suggests a possible loss of engine efficiency or fuel flow issues, which could lead to engine damage [3].
+2. s11 (Ps30, static pressure at HPC outlet): rising (+0.25) might indicate a problem with the engine's mechanical condition, such as turbine damage or inefficiency [1].
+3. s3 (T30, total temperature at HPC outlet): rising (+0.24) could be a sign of turbine damage or exhaust gas temperature issues [1].
+
+ACTIONS:
+1. Examine the engine's mechanical condition, focusing on the turbine section, to identify any potential damage or inefficiency, addressing the issue suggested by sensors s11 and s3 [1].
+2. Investigate fuel flow issues related to sensor s12, as it might be a symptom of engine efficiency loss [3]. [No specific passage directly addresses this symptom, but the context suggests it as a potential issue.]
+3. Perform a detailed analysis of the engine's operational data to identify any patterns or trends that could help pinpoint the root cause of the observed symptoms [4]. [This action does not directly address a specific symptom, but it can help understand the engine's condition better.]",,,,
+34,llama3.1,llm_only,7.0,6.0,1.0,s12 falling; s11 rising; s3 rising,,2,0,0,"STATUS: Engine 34 is predicted to fail within the next 6 cycles, indicating a high urgency for maintenance.
+
+KEY SENSORS:
+1. s12 (phi, ratio of fuel flow to Ps30): falling (-0.28) - suggests a potential issue with fuel flow or compressor efficiency.
+2. s11 (Ps30, static pressure at HPC outlet): rising (+0.25) - indicates a possible increase in compressor pressure, which could be a sign of wear.
+3. s9 (Nc, physical core speed (rpm)): falling (-0.06) - suggests a potential issue with the core's rotational speed, possibly due to turbine wear.
+
+ACTIONS:
+1. Inspect the compressor and turbine for signs of wear or damage, addressing the potential issue with compressor efficiency and core speed (observed symptoms: s12, s9).
+2. Monitor the engine's fuel flow and adjust as necessary to prevent further degradation (observed symptom: s12).
+3. Check the engine's cooling system, particularly the HPT and LPT coolants, to ensure they are functioning properly (observed symptoms: s20, s21).",,,,
+34,llama3.1,rag,7.0,6.0,1.0,s12 falling; s11 rising; s3 rising,amt_powerplant_handbook.pdf p.428; amt_powerplant_handbook.pdf p.427; C-MAPSS.pdf p.5; C-MAPSS.pdf p.2,3,1,0,"STATUS: Engine 34 is predicted to fail in 6 cycles, indicating a high urgency for maintenance.
+
+KEY SENSORS:
+1. s12 (phi, ratio of fuel flow to Ps30): falling (-0.28) - suggests loss of compressor or turbine efficiency.
+2. s11 (Ps30, static pressure at HPC outlet): rising (+0.25) - suggests possible turbine damage.
+3. s3 (T30, total temperature at HPC outlet): rising (+0.24) - suggests possible turbine damage.
+
+ACTIONS:
+1. Inspect the engine's main bearings, as engine main bearings are a possible cause of engine malfunction, as mentioned in [1].
+2. Check the engine's compressor section for damage, as damage in the compressor section is a possible cause of engine malfunction, as stated in [1].
+3. Monitor the engine's overall performance and consider adjusting the engine's trim, as an engine out of trim can cause engine malfunction, as mentioned in [1].",,,,
+41,mistral,llm_only,18.0,23.7,5.7,s7 falling; s4 rising; s11 rising,,3,0,0," STATUS: The engine is showing signs of degradation, with 24 cycles remaining before predicted failure.
+
+KEY SENSORS:
+1. s7 (P30, total pressure at HPC outlet): falling (-0.21) - This suggests a potential issue with the high-pressure compressor, which could be losing efficiency.
+2. s4 (T50, total temperature at LPT outlet): rising (+0.20) - This increase in temperature at the low-pressure turbine outlet could indicate an efficiency loss or potential damage.
+3. s11 (Ps30, static pressure at HPC outlet): rising (+0.20) - This rise in static pressure at the high-pressure compressor outlet might be a compensatory response to the compressor's potential inefficiency.
+
+ACTIONS:
+1. (Addresses s7) Inspect the high-pressure compressor for any signs of wear or damage.
+2. (Addresses s4) Analyze the low-pressure turbine for potential efficiency loss or damage.
+3. (Addresses s11) Monitor the high-pressure compressor's performance and adjust maintenance schedules if necessary, given the compensatory pressure rise.",,,,
+41,mistral,rag,18.0,23.7,5.7,s7 falling; s4 rising; s11 rising,amt_powerplant_handbook.pdf p.428; amt_powerplant_handbook.pdf p.427; C-MAPSS.pdf p.5; C-MAPSS.pdf p.3,3,2,0," STATUS: The engine's health is deteriorating, with an estimated remaining useful life of 24 cycles.
+
+KEY SENSORS:
+1. s7 (P30, total pressure at HPC outlet): falling (-0.21) suggests a possible turbine damage and/or loss of turbine efficiency [1].
+2. s4 (T50, total temperature at LPT outlet): rising (+0.20) may indicate turbine damage [1].
+3. s11 (Ps30, static pressure at HPC outlet): rising (+0.20) could also suggest turbine damage and/or loss of turbine efficiency [1].
+
+ACTIONS:
+1. (Addresses symptoms in s7, s4, s11) Inspect the turbine section for potential damage or wear [1].
+2. (Addresses symptoms in s7, s11) Investigate the engine's mechanical condition for any signs of turbine damage [1].
+3. (Addresses symptoms in s7) Examine the engine's bleed-air valve for potential malfunctions [1].",,,,
+41,llama3.1,llm_only,18.0,23.7,5.7,s7 falling; s4 rising; s11 rising,,3,0,0,"STATUS: Engine 41 is showing signs of degradation, with a predicted remaining useful life of 24 cycles, indicating a moderate to high urgency for maintenance.
+
+KEY SENSORS:
+1. s7 (P30, total pressure at HPC outlet): falling (-0.21) - suggests a loss of compressor efficiency.
+2. s4 (T50, total temperature at LPT outlet): rising (+0.20) - indicates a potential increase in turbine temperature, possibly due to wear.
+3. s11 (Ps30, static pressure at HPC outlet): rising (+0.20) - may indicate a change in compressor or turbine performance.
+
+ACTIONS:
+1. Inspect and clean the high-pressure compressor (HPC) outlet, addressing the falling total pressure (s7) and rising static pressure (s11).
+2. Monitor and adjust the fuel flow to maintain optimal turbine temperature, addressing the rising total temperature (s4).
+3. Check the HPT and LPT coolant bleeds (s20 and s21) to ensure they are within normal ranges, addressing the falling coolant flow.",,,,
+41,llama3.1,rag,18.0,23.7,5.7,s7 falling; s4 rising; s11 rising,amt_powerplant_handbook.pdf p.428; amt_powerplant_handbook.pdf p.427; C-MAPSS.pdf p.5; C-MAPSS.pdf p.3,3,1,0,"STATUS: Engine 41 is predicted to have a remaining useful life of 24 cycles, indicating a moderate to high urgency for maintenance.
+
+KEY SENSORS:
+1. s7 (P30, total pressure at HPC outlet): falling (-0.21) - suggests possible turbine damage or loss of turbine efficiency [1].
+2. s4 (T50, total temperature at LPT outlet): rising (+0.20) - suggests possible turbine damage or excessive heat generation [1].
+3. s11 (Ps30, static pressure at HPC outlet): rising (+0.20) - suggests possible compressor or turbine efficiency loss [1].
+
+ACTIONS:
+1. Inspect the engine's main bearings for wear, as excessive wear can cause a decrease in efficiency [2].
+2. Check the engine's compressor section for damage, as damage can cause a loss of compressor efficiency [1].
+3. Monitor the engine's fan and core speeds, as excessive wear can cause a decrease in efficiency [3].",,,,
+50,mistral,llm_only,79.0,95.5,16.5,s15 rising; s21 falling; s11 rising,,3,0,0," STATUS: The engine is showing signs of degradation, with a predicted remaining useful life of 96 cycles.
+
+KEY SENSORS:
+1. s15 (BPR, bypass ratio): Rising (+0.15) suggests an increase in fuel efficiency, which could be a result of compressor or turbine degradation.
+2. s21 (W32, LPT coolant bleed): Falling (-0.08) might indicate a decrease in cooling efficiency, which could lead to overheating.
+3. s11 (Ps30, static pressure at HPC outlet): Rising (+0.08) could be a sign of compressor or turbine degradation, leading to reduced efficiency.
+
+ACTIONS:
+1. (Addresses s15) Perform a compressor or turbine inspection to assess the extent of degradation.
+2. (Addresses s21) Check the LPT coolant system for any potential blockages or leaks that could affect cooling efficiency.
+3. (Addresses s11) Analyze the high-pressure compressor outlet for any signs of wear or damage that could be causing increased pressure.",,,,
+50,mistral,rag,79.0,95.5,16.5,s15 rising; s21 falling; s11 rising,amt_powerplant_handbook.pdf p.428; amt_powerplant_handbook.pdf p.427; C-MAPSS.pdf p.5; AC_33.90-1A.pdf p.5,3,0,0," STATUS: The engine's health is moderately degraded, with a predicted remaining useful life of 96 cycles.
+
+KEY SENSORS:
+1. s15 (BPR, bypass ratio): rising (+0.15) - This suggests a possible loss of compressor efficiency or an increase in fuel flow, which could be due to turbine damage or an engine-mounted accessory malfunction [1].
+2. s21 (W32, LPT coolant bleed): falling (-0.08) - This could indicate a problem with the LPT coolant system, such as a leak or blockage, which might lead to overheating [1].
+3. s11 (Ps30, static pressure at HPC outlet): rising (+0.08) - This increase in pressure might be a sign of turbine damage or a blockage in the HPC outlet [1].
+
+ACTIONS:
+1. Inspect the compressor and turbine sections for any signs of damage or wear, as suggested by the rising bypass ratio and static pressure at the HPC outlet [1].
+2. Check the LPT coolant system for leaks or blockages, as indicated by the falling LPT coolant bleed [1].
+3. Examine engine-mounted accessories such as the constant-speed drive, generator, hydraulic pump, etc., as they could be causing issues [1].",,,,
+50,llama3.1,llm_only,79.0,95.5,16.5,s15 rising; s21 falling; s11 rising,,3,0,0,"STATUS: Engine 50 is showing signs of degradation, with a predicted remaining useful life of 96 cycles, indicating a moderate urgency for maintenance.
+
+KEY SENSORS:
+1. s15 (BPR, bypass ratio): rising (+0.15) - suggests a potential increase in compressor efficiency loss.
+2. s21 (W32, LPT coolant bleed): falling (-0.08) - indicates a possible decrease in LPT efficiency or increased heat transfer.
+3. s11 (Ps30, static pressure at HPC outlet): rising (+0.08) - suggests a potential increase in HPC outlet pressure, possibly due to compressor efficiency loss.
+
+ACTIONS:
+1. Inspect and clean the compressor blades (addresses s15 and s11) - to prevent further efficiency loss and potential damage.
+2. Monitor and adjust the LPT coolant bleed (addresses s21) - to prevent overheating and potential damage to the LPT.
+3. Run a diagnostic on the engine's fuel system (no specific sensor change, but a precautionary measure)",,,,
+50,llama3.1,rag,79.0,95.5,16.5,s15 rising; s21 falling; s11 rising,amt_powerplant_handbook.pdf p.428; amt_powerplant_handbook.pdf p.427; C-MAPSS.pdf p.5; AC_33.90-1A.pdf p.5,3,1,0,"STATUS: Engine 50 is predicted to have 96 cycles of remaining useful life, indicating a moderate level of urgency.
+
+KEY SENSORS:
+1. s15 (BPR, bypass ratio): rising (+0.15) - suggests a possible loss of compressor efficiency.
+2. s21 (W32, LPT coolant bleed): falling (-0.08) - suggests a possible loss of turbine efficiency.
+3. s11 (Ps30, static pressure at HPC outlet): rising (+0.08) - suggests a possible increase in engine pressure ratio.
+
+ACTIONS:
+1. Check the engine's compressor section for damage, as damage in this section can cause a loss of compressor efficiency, as stated in [1].
+2. Inspect the engine's turbine components for excessive wear, as excessive wear can reduce turbine component life, as mentioned in [2].
+3. Monitor the engine's overall condition, as excessive wear can be modeled by variations in flow and efficiencies of the various modules, as mentioned in [3].",,,,
+51,mistral,llm_only,114.0,101.7,12.3,s15 rising; s7 falling; s4 falling,,3,0,0," STATUS: The engine is showing signs of degradation, with the bypass ratio increasing and total pressure and temperature decreasing, indicating potential efficiency losses in the engine. Urgency is moderate, as the engine still has 102 cycles left according to the prediction.
+
+KEY SENSORS:
+1. s15 (BPR, bypass ratio): Rising (+0.12) suggests an increase in the bypass airflow, which could be a compensatory mechanism for decreasing engine efficiency.
+2. s7 (P30, total pressure at HPC outlet): Falling (-0.09) indicates a decrease in pressure, potentially due to compressor or turbine efficiency loss.
+3. s4 (T50, total temperature at LPT outlet): Falling (-0.06) suggests a decrease in temperature, which could be a result of inefficiencies in the engine's heat generation or exhaust.
+
+ACTIONS:
+1. (Addresses s7) Analyze compressor and turbine efficiency to identify potential degradation.
+2. (Addresses s4) Investigate heat generation and exhaust processes to understand the temperature decrease.
+3. (Addresses both s15 and s7) Assess the need for adjustments to the engine's bypass ratio to maintain optimal performance.",,,,
+51,mistral,rag,114.0,101.7,12.3,s15 rising; s7 falling; s4 falling,amt_powerplant_handbook.pdf p.427; C-MAPSS.pdf p.5; amt_powerplant_handbook.pdf p.412; AC_33.90-1A.pdf p.5,3,0,0," STATUS: The engine's health is moderately degrading, with 102 cycles remaining before reaching the end of its useful life.
+
+KEY SENSORS:
+1. s15 (BPR, bypass ratio): rising (+0.12) - This suggests an increase in fuel efficiency, which could be a compensatory measure for declining engine performance.
+2. s7 (P30, total pressure at HPC outlet): falling (-0.09) - This decrease in pressure indicates potential issues with the high-pressure compressor or turbine.
+3. s4 (T50, total temperature at LPT outlet): falling (-0.06) - This drop in temperature suggests a decline in the low-pressure turbine's efficiency.
+
+ACTIONS:
+1. Address the decline in high-pressure compressor or turbine performance by inspecting the HPC and HPT components for wear or damage. [2]
+2. Investigate the increase in bypass ratio to determine if it is a compensatory measure for declining engine performance and adjust fuel flow accordingly if necessary. [2]
+3. Perform a thorough inspection of the low-pressure turbine to identify any issues contributing to its declining efficiency. [2]",,,,
+51,llama3.1,llm_only,114.0,101.7,12.3,s15 rising; s7 falling; s4 falling,,3,0,0,"STATUS: Engine 51 is showing signs of degradation, with a predicted remaining useful life of 102 cycles, indicating a moderate urgency for maintenance.
+
+KEY SENSORS:
+1. s15 (BPR, bypass ratio): rising (+0.12) - suggests increased compressor efficiency loss.
+2. s7 (P30, total pressure at HPC outlet): falling (-0.09) - indicates decreased compressor efficiency.
+3. s4 (T50, total temperature at LPT outlet): falling (-0.06) - suggests decreased turbine efficiency.
+
+ACTIONS:
+1. Inspect and clean the high-pressure compressor (HPC) vanes and blades (addresses s7 and s15).
+2. Monitor and adjust the fuel flow to maintain optimal turbine efficiency (addresses s4).
+3. Check the LPT outlet temperature and adjust the cooling system as needed (addresses s4).",,,,
+51,llama3.1,rag,114.0,101.7,12.3,s15 rising; s7 falling; s4 falling,amt_powerplant_handbook.pdf p.427; C-MAPSS.pdf p.5; amt_powerplant_handbook.pdf p.412; AC_33.90-1A.pdf p.5,3,0,0,"STATUS: Engine 51 is predicted to have 102 cycles of remaining useful life, indicating a moderate level of urgency.
+
+KEY SENSORS:
+1. s15 (BPR, bypass ratio): rising (+0.12) - suggests increased compressor efficiency, which may be due to initial wear [2].
+2. s7 (P30, total pressure at HPC outlet): falling (-0.09) - suggests decreased compressor efficiency, which may be due to initial wear [2].
+3. s4 (T50, total temperature at LPT outlet): falling (-0.06) - suggests decreased turbine efficiency, which may be due to initial wear [2].
+
+ACTIONS:
+1. Perform a thorough inspection of the engine's compressor and turbine sections to identify any signs of wear or damage [3].
+2. Monitor the engine's fan speed and corrected fan speed to ensure they are within normal operating ranges, as excessive wear can cause variations in flow and efficiencies [2].
+3. Check the engine's fuel flow and corrected core speed to ensure they are within normal operating ranges, as excessive wear can cause variations in flow and efficiencies [2].",,,,
+60,mistral,llm_only,100.0,115.6,15.6,s20 falling; s17 rising; s12 falling,,3,0,0," STATUS: The engine is showing signs of degradation, with 116 cycles remaining before predicted failure.
+
+KEY SENSORS:
+1. s17 (htBleed, bleed enthalpy): Rising (+0.08) suggests an increase in heat transfer, potentially indicating a degradation in the high-pressure turbine (HPT).
+2. s12 (phi, ratio of fuel flow to Ps30): Falling (-0.07) indicates a decrease in fuel efficiency, which could be a sign of compressor or turbine degradation.
+3. s20 (W31, HPT coolant bleed): Falling (-0.10) suggests a decrease in coolant flow, which may indicate a problem with the HPT cooling system.
+
+ACTIONS:
+1. (Addresses s20) Inspect the HPT coolant bleed system for potential blockages or leaks.
+2. (Addresses s12) Analyze the compressor and turbine efficiency to determine the extent of degradation.
+3. (Addresses s17) Monitor the HPT temperature and pressure to assess the impact of the rising bleed enthalpy. If necessary, adjust the bleed valve settings to maintain optimal HPT conditions.",,,,
+60,mistral,rag,100.0,115.6,15.6,s20 falling; s17 rising; s12 falling,amt_powerplant_handbook.pdf p.427; C-MAPSS.pdf p.3; amt_powerplant_handbook.pdf p.412; C-MAPSS.pdf p.5,2,0,0," STATUS: The engine's health is deteriorating, with an estimated remaining useful life of 116 cycles.
+
+KEY SENSORS:
+1. s20 (W31, HPT coolant bleed) falling (-0.10): This decrease in coolant bleed suggests a potential issue with the high-pressure turbine (HPT), which may be experiencing increased wear or degradation.
+2. s17 (htBleed, bleed enthalpy) rising (+0.08): An increase in bleed enthalpy could indicate a problem with the HPT cooling system, potentially related to the falling coolant bleed.
+3. s12 (phi, ratio of fuel flow to Ps30) falling (-0.07): A decrease in this ratio might suggest a reduction in engine efficiency, which could be related to the observed issues with the HPT.
+
+ACTIONS:
+1. (Based on [4]) Perform an inspection of the high-pressure turbine (HPT) to assess the extent of any wear or degradation.
+2. (Based on [2]) Monitor the HPT coolant bleed (s20) and bleed enthalpy (s17) to determine if there are any further changes that may indicate a need for maintenance or repair.
+3. (Based on [1]) If the engine's efficiency continues to decline, consider adjusting the fuel flow to address the issue (addressed by s12). However, this should be done in accordance with the engine manufacturer's instructions.",,,,
+60,llama3.1,llm_only,100.0,115.6,15.6,s20 falling; s17 rising; s12 falling,,3,0,0,"STATUS: Engine 60 is showing signs of degradation, with a predicted remaining useful life of 116 cycles, indicating a moderate urgency for maintenance.
+
+KEY SENSORS:
+1. s20 (W31, HPT coolant bleed): falling (-0.10) - suggests a potential issue with the high-pressure turbine (HPT) coolant system.
+2. s17 (htBleed, bleed enthalpy): rising (+0.08) - indicates a possible increase in heat transfer or a change in the bleed system.
+3. s12 (phi, ratio of fuel flow to Ps30): falling (-0.07) - suggests a potential decrease in fuel efficiency or a change in the compressor's performance.
+
+ACTIONS:
+1. Inspect the HPT coolant system for any signs of leakage or blockages, addressing the symptom of s20 (W31, HPT coolant bleed).
+2. Monitor the bleed enthalpy (s17) and adjust the bleed system as necessary to prevent overheating, addressing the symptom of s17 (htBleed).
+3. Investigate the compressor's performance and adjust the fuel flow (s12) to optimize efficiency, addressing the symptom of s12 (phi).",,,,
+60,llama3.1,rag,100.0,115.6,15.6,s20 falling; s17 rising; s12 falling,amt_powerplant_handbook.pdf p.427; C-MAPSS.pdf p.3; amt_powerplant_handbook.pdf p.412; C-MAPSS.pdf p.5,3,0,0,"STATUS: Engine 60 is predicted to have 116 cycles of remaining useful life, indicating a moderate level of urgency.
+
+KEY SENSORS:
+1. s20 (W31, HPT coolant bleed): falling (-0.10) - suggests a potential issue with the high-pressure turbine (HPT) coolant system.
+2. s17 (htBleed, bleed enthalpy): rising (+0.08) - indicates a possible increase in bleed enthalpy, which could be related to turbine component wear.
+3. s12 (phi, ratio of fuel flow to Ps30): falling (-0.07) - suggests a potential issue with fuel flow or compressor efficiency.
+
+ACTIONS:
+1. Monitor HPT coolant system performance, as indicated by s20 (W31, HPT coolant bleed) [3]. This is a general maintenance action to address potential issues with the HPT coolant system.
+2. Investigate the cause of the rising bleed enthalpy, as indicated by s17 (htBleed, bleed enthalpy) [2]. This is a general maintenance action to address potential issues with turbine component wear.
+3. Check the fuel flow and compressor efficiency, as indicated by s12 (phi, ratio of fuel flow to Ps30) [1]. This is a general maintenance action to address potential issues with fuel flow or compressor efficiency.",,,,
+62,mistral,llm_only,54.0,40.4,13.6,s21 falling; s3 rising; s20 falling,,3,0,0," STATUS: The engine is showing signs of degradation, with 40 cycles remaining before predicted failure.
+
+KEY SENSORS:
+1. s21 (W32, LPT coolant bleed): falling (-0.18) - This suggests a potential issue with the cooling system of the LPT, which could lead to overheating.
+2. s3 (T30, total temperature at HPC outlet): rising (+0.16) - Increase in temperature at the HPC outlet could indicate inefficiency or damage in the high-pressure compressor or turbine.
+3. s20 (W31, HPT coolant bleed): falling (-0.15) - Similar to s21, this could indicate a problem with the cooling system of the HPT, potentially leading to overheating.
+
+ACTIONS:
+1. (Addresses s21) Inspect the LPT cooling system for any signs of wear or damage.
+2. (Addresses s3) Perform a thorough examination of the high-pressure compressor and turbine for any indications of degradation or damage.
+3. (Addresses s20) Inspect the HPT cooling system for any signs of wear or damage.",,,,
+62,mistral,rag,54.0,40.4,13.6,s21 falling; s3 rising; s20 falling,C-MAPSS.pdf p.3; amt_powerplant_handbook.pdf p.427; amt_powerplant_handbook.pdf p.412; C-MAPSS.pdf p.5,3,0,0," STATUS: The engine's health is showing signs of degradation, with 40 cycles remaining before reaching the end of its useful life.
+
+KEY SENSORS:
+1. s21 (W32, LPT coolant bleed) falling (-0.18): This decrease suggests a potential issue with the cooling system, which could lead to overheating if not addressed.
+2. s3 (T30, total temperature at HPC outlet) rising (+0.16): An increase in temperature at the high-pressure compressor outlet could indicate inefficiencies or wear in the compressor, reducing the engine's overall performance.
+3. s20 (W32, HPT coolant bleed) falling (-0.15): Similar to the LPT coolant bleed, this decrease might indicate a problem with the cooling system, potentially leading to increased temperatures in the high-pressure turbine.
+
+ACTIONS:
+1. Address the cooling system issues (s21, s20): [4] - Perform maintenance on the cooling system to prevent overheating and potential engine damage.
+2. Inspect the high-pressure compressor (s3): [2] - Excessive engine speed can cause premature wear and, if extreme, engine failure. The rising temperature at the HPC outlet might indicate such a situation, necessitating an inspection.
+3. Monitor exhaust temperatures (s4): [2] - Excessive exhaust temperatures can lead to engine deterioration. Since the engine is showing signs of degradation, it's important to closely monitor the exhaust temperatures to ensure they do not exceed safe levels. [No passage specifically fits for this action, but it is suggested by the general information about EGT and engine life.]",,,,
+62,llama3.1,llm_only,54.0,40.4,13.6,s21 falling; s3 rising; s20 falling,,3,0,0,"STATUS: Engine 62 is showing signs of degradation, with a predicted remaining useful life of 40 cycles, indicating a moderate to high urgency for maintenance.
+
+KEY SENSORS:
+1. s21 (W32, LPT coolant bleed): falling (-0.18) - suggests a potential issue with the low-pressure turbine (LPT) coolant system.
+2. s3 (T30, total temperature at HPC outlet): rising (+0.16) - indicates a possible increase in high-pressure compressor (HPC) outlet temperature, which could be a sign of compressor efficiency loss.
+3. s20 (W31, HPT coolant bleed): falling (-0.15) - suggests a potential issue with the high-pressure turbine (HPT) coolant system.
+
+ACTIONS:
+1. Inspect the LPT coolant system for any signs of leakage or blockage, addressing the symptom of falling LPT coolant bleed (s21). (Observed symptom: s21)
+2. Monitor the HPC outlet temperature and compressor efficiency, addressing the symptom of rising HPC outlet temperature (s3). (Observed symptom: s3)
+3. Inspect the HPT coolant system for any signs of leakage or blockage, addressing the symptom of falling HPT coolant bleed (s20). (Observed symptom: s20)",,,,
+62,llama3.1,rag,54.0,40.4,13.6,s21 falling; s3 rising; s20 falling,C-MAPSS.pdf p.3; amt_powerplant_handbook.pdf p.427; amt_powerplant_handbook.pdf p.412; C-MAPSS.pdf p.5,3,0,0,"STATUS: Engine 62 is predicted to have a remaining useful life of 40 cycles, indicating a moderate to high urgency for maintenance.
+
+KEY SENSORS:
+1. s21 (W32, LPT coolant bleed): falling (-0.18) - suggests potential loss of compressor efficiency.
+2. s3 (T30, total temperature at HPC outlet): rising (+0.16) - indicates potential increase in turbine component wear.
+3. s20 (W31, HPT coolant bleed): falling (-0.15) - suggests potential decrease in turbine efficiency.
+
+ACTIONS:
+1. Monitor and adjust engine speed to prevent excessive wear. [2]
+2. Investigate and address potential loss of compressor efficiency by inspecting the LPT coolant bleed system. [1]
+3. Consider adjusting the fuel flow to maintain optimal EGT temperatures and prevent turbine component wear. [2]",,,,
+73,mistral,llm_only,125.0,103.4,21.6,s20 falling; s2 rising; s15 rising,,3,0,0," STATUS: The engine is showing signs of degradation, with 103 cycles remaining before predicted failure.
+
+KEY SENSORS:
+1. s20 (W31, HPT coolant bleed): falling (-0.09) - This suggests a potential issue with the high-pressure turbine (HPT), as the coolant bleed rate is decreasing, which could indicate wear or damage.
+2. s2 (T24, total temperature at LPC outlet): rising (+0.09) - An increase in temperature at the low-pressure compressor (LPC) outlet could indicate inefficiency or degradation in the compressor blades.
+3. s15 (BPR, bypass ratio): rising (+0.07) - A rising bypass ratio might indicate a problem with the engine's overall efficiency, as more air is bypassing the core and not being compressed and heated.
+
+ACTIONS:
+1. (Addresses s20) Inspect the high-pressure turbine for signs of wear or damage.
+2. (Addresses s2) Perform a compressor efficiency test to assess the health of the low-pressure compressor blades.
+3. (Addresses s15) Analyze the engine's performance data to identify any factors contributing to the rising bypass ratio and address them accordingly.",,,,
+73,mistral,rag,125.0,103.4,21.6,s20 falling; s2 rising; s15 rising,amt_powerplant_handbook.pdf p.427; amt_powerplant_handbook.pdf p.428; C-MAPSS.pdf p.5; C-MAPSS.pdf p.2,3,1,0," STATUS: The engine's health is deteriorating, with an estimated remaining useful life of 103 cycles.
+
+KEY SENSORS:
+1. s2 (T24, total temperature at LPC outlet): rising (+0.09) - This suggests an increase in exhaust gas temperature, which may indicate turbine damage or loss of turbine efficiency [2].
+2. s20 (W31, HPT coolant bleed): falling (-0.09) - A decrease in coolant bleed could indicate wear or damage in the high-pressure turbine (HPT) [3].
+3. s15 (BPR, bypass ratio): rising (+0.07) - An increase in bypass ratio might be a compensatory mechanism for reduced engine efficiency or increased exhaust gas temperature [3].
+
+ACTIONS:
+1. Inspect the high-pressure turbine for signs of wear or damage, addressing the falling coolant bleed (s20) [3].
+2. Investigate the cause of the increasing bypass ratio (s15), as it might indicate underlying engine issues [3].
+3. Analyze the engine's performance data to identify any trends or patterns that could help diagnose the cause of the rising exhaust gas temperature (s2) [2].",,,,
+73,llama3.1,llm_only,125.0,103.4,21.6,s20 falling; s2 rising; s15 rising,,3,0,0,"STATUS: Engine 73 is showing signs of degradation, with a predicted remaining useful life of 103 cycles, indicating a moderate urgency for maintenance.
+
+KEY SENSORS:
+1. s20 (W31, HPT coolant bleed): falling (-0.09) - suggests a potential issue with the high-pressure turbine (HPT) coolant system.
+2. s2 (T24, total temperature at LPC outlet): rising (+0.09) - indicates a possible decrease in low-pressure compressor (LPC) efficiency.
+3. s15 (BPR, bypass ratio): rising (+0.07) - may indicate a change in engine operating conditions or a potential issue with the bypass system.
+
+ACTIONS:
+1. Inspect the HPT coolant system for any signs of leakage or blockage, addressing the symptom of s20 (W31, HPT coolant bleed) falling.
+2. Monitor the LPC outlet temperature and investigate possible causes for the increase in s2 (T24, total temperature at LPC outlet).
+3. Review engine operating conditions and check the bypass system for any potential issues, addressing the symptom of s15 (BPR, bypass ratio) rising.",,,,
+73,llama3.1,rag,125.0,103.4,21.6,s20 falling; s2 rising; s15 rising,amt_powerplant_handbook.pdf p.427; amt_powerplant_handbook.pdf p.428; C-MAPSS.pdf p.5; C-MAPSS.pdf p.2,3,1,0,"STATUS: Engine 73 is predicted to have 103 cycles of remaining useful life, indicating a moderate level of urgency.
+
+KEY SENSORS:
+1. s20 (W31, HPT coolant bleed): falling (-0.09) - suggests potential loss of compressor or turbine efficiency.
+2. s2 (T24, total temperature at LPC outlet): rising (+0.09) - indicates potential increase in exhaust gas temperature.
+3. s15 (BPR, bypass ratio): rising (+0.07) - may indicate potential damage in compressor section.
+
+ACTIONS:
+1. Monitor engine speed and exhaust gas temperature to prevent excess EGT, which can reduce turbine component life. [1]
+2. Check for potential damage in compressor section, as indicated by the rising bypass ratio. [2]
+3. Consider the potential loss of compressor or turbine efficiency due to the falling HPT coolant bleed. [2]",,,,
+90,mistral,llm_only,28.0,32.1,4.1,s11 rising; s21 falling; s20 falling,,3,0,0," STATUS: The engine is showing signs of degradation, with 32 cycles remaining before predicted failure.
+
+KEY SENSORS:
+1. s11 (Ps30, static pressure at HPC outlet): Rising pressure suggests potential compressor blade erosion or fouling, which may lead to reduced efficiency.
+2. s21 (W32, LPT coolant bleed): Falling coolant bleed indicates possible cooling system degradation, which could lead to overheating.
+3. s20 (W31, HPT coolant bleed): Falling coolant bleed might indicate a similar issue as s21, but in the high-pressure turbine cooling system.
+
+ACTIONS:
+1. (Addresses s11) Inspect compressor blades for signs of erosion or fouling.
+2. (Addresses s21 and s20) Check the cooling systems for any leaks or blockages that could be causing reduced coolant flow.
+3. (Addresses s11) Monitor the engine's efficiency and consider implementing corrective measures if a significant drop is observed.",,,,
+90,mistral,rag,28.0,32.1,4.1,s11 rising; s21 falling; s20 falling,C-MAPSS.pdf p.3; amt_powerplant_handbook.pdf p.428; amt_powerplant_handbook.pdf p.412; C-MAPSS.pdf p.5,3,0,0," STATUS: The engine's health is deteriorating, with an estimated remaining useful life of 32 cycles.
+
+KEY SENSORS:
+1. s11 (Ps30, static pressure at HPC outlet): rising (+0.25) - This suggests an increase in engine pressure, which could be a sign of wear or inefficiency in the high-pressure compressor (HPC).
+2. s21 (W32, LPT coolant bleed): falling (-0.16) - A decrease in LPT coolant bleed could indicate a problem with the low-pressure turbine (LPT) or its cooling system.
+3. s20 (W31, HPT coolant bleed): falling (-0.13) - A decrease in HPT coolant bleed could also suggest a problem with the high-pressure turbine (HPT) or its cooling system.
+
+ACTIONS:
+1. (Addresses s11) Inspect the high-pressure compressor for signs of wear or damage, as suggested in [4].
+2. (Addresses s21 and s20) Investigate the low-pressure and high-pressure turbines, as well as their cooling systems, for potential issues, as indicated by the falling coolant bleed readings. [1]
+3. (Addresses s21 and s20, if no other issues are found) Check the turbine discharge pressure lines and probes for leaks or blockages, as suggested in [2]. If no other issues are found, this could be a possible cause for the falling coolant bleed readings.",,,,
+90,llama3.1,llm_only,28.0,32.1,4.1,s11 rising; s21 falling; s20 falling,,3,0,0,"STATUS: Engine 90 is showing signs of degradation, with a predicted remaining useful life of 32 cycles, indicating a moderate to high urgency for maintenance.
+
+KEY SENSORS:
+1. s11 (Ps30, static pressure at HPC outlet): rising (+0.25) - suggests increasing compressor efficiency loss.
+2. s21 (W32, LPT coolant bleed): falling (-0.16) - indicates decreasing turbine efficiency or increased cooling demand.
+3. s20 (W31, HPT coolant bleed): falling (-0.13) - suggests increasing turbine efficiency loss or increased cooling demand.
+
+ACTIONS:
+1. Inspect and clean the high-pressure compressor (HPC) outlet, addressing the rising static pressure (s11) and potential compressor efficiency loss.
+2. Investigate and address the decreasing turbine efficiency or increased cooling demand, indicated by the falling LPT coolant bleed (s21) and HPT coolant bleed (s20).
+3. Monitor the fan speed (s8) and core speed (s9) for any further increases, as rising speeds may indicate increasing engine load or efficiency loss.",,,,
+90,llama3.1,rag,28.0,32.1,4.1,s11 rising; s21 falling; s20 falling,C-MAPSS.pdf p.3; amt_powerplant_handbook.pdf p.428; amt_powerplant_handbook.pdf p.412; C-MAPSS.pdf p.5,3,1,0,"STATUS: Engine 90 is predicted to have a remaining useful life of 32 cycles, indicating a moderate to high urgency for maintenance.
+
+KEY SENSORS:
+1. s11 (Ps30, static pressure at HPC outlet): rising (+0.25) - suggests possible turbine damage and/or loss of turbine efficiency [2].
+2. s21 (W32, LPT coolant bleed): falling (-0.16) - suggests possible damage in compressor section [2].
+3. s20 (W31, HPT coolant bleed): falling (-0.13) - suggests possible turbine damage [2].
+
+ACTIONS:
+1. Check the engine's main bearings for wear, as excessive wear can cause turbine damage [2].
+2. Inspect the compressor section for damage, as a damaged compressor can cause a decrease in LPT coolant bleed [2].
+3. Monitor the engine's overall performance, as initial wear can affect the useful operational life of components [4].",,,,
