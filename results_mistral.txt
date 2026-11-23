@@ -1,0 +1,45 @@
+INDEXED SOURCES: ['AC_33.90-1A.pdf', 'C-MAPSS.pdf', 'amt_powerplant_handbook.pdf']
+
+======================================================================
+LLM_ONLY | model mistral | guard on
+Engine 34 | predicted RUL 6 | true RUL 7
+======================================================================
+ STATUS: The engine is showing signs of degradation with a predicted remaining useful life of 6 cycles.
+
+KEY SENSORS:
+1. s12 (phi, ratio of fuel flow to Ps30): falling (-0.28) - This suggests a potential issue with the engine's fuel efficiency, which could lead to power loss.
+2. s11 (Ps30, static pressure at HPC outlet): rising (+0.25) - An increase in static pressure might indicate a blockage or inefficiency in the high-pressure compressor.
+3. s3 (T30, total temperature at HPC outlet): rising (+0.24) - Higher temperatures could be a sign of increased wear or inefficiency in the high-pressure turbine.
+
+ACTIONS:
+1. (Addresses s12) Perform a fuel system check to identify any potential leaks or blockages that could be affecting fuel efficiency.
+2. (Addresses s11) Inspect the high-pressure compressor for any signs of blockage or wear that could be causing increased static pressure.
+3. (Addresses s3) Analyze the high-pressure turbine for any indications of increased wear or inefficiency that could be causing higher temperatures.
+
+Direction check: 3/3 key sensors correct | instrument actions left: 0
+
+======================================================================
+RAG | model mistral | guard on
+Engine 34 | predicted RUL 6 | true RUL 7
+======================================================================
+RETRIEVED PASSAGES:
+  [1] (meaning search) C-MAPSS.pdf p.3 (similarity 0.60): n Figure 3 and Figure 4, respectively. Efficiency HPC Stall Margin (SmHPC) - HPC Fault -0.16 -0.14 -0.12 -0.1 -0.08 -0.06 -0.04 -0.02 0 -0.1...
+  [2] (meaning search) amt_powerplant_handbook.pdf p.428 (similarity 0.54): 10-60 Indicated Malfunction Probable Causes Suggested Action • Engine pressure ratio indication has high reading error. • Engine pressure ra...
+  [3] (action search) amt_powerplant_handbook.pdf p.412 (similarity 0.65): should be followed when performing inspections or maintenance. Maintenance information presented in this section is not intended to specify ...
+  [4] (action search) C-MAPSS.pdf p.5 (similarity 0.51): ems. Although it’s not considered abnormal, it can make a difference i n useful operational life of a component. Initial wear can a lso be m...
+
+ STATUS: The engine's health is deteriorating, with 6 cycles remaining before failure.
+
+KEY SENSORS:
+1. s12 (phi, ratio of fuel flow to Ps30): falling (-0.28) - This suggests a possible loss of turbine efficiency, as the engine is using more fuel for less pressure [4].
+2. s11 (Ps30, static pressure at HPC outlet): rising (+0.25) - This could indicate a problem with the high-pressure compressor (HPC), such as a stall margin approaching the threshold for malfunction [1].
+3. s3 (T30, total temperature at HPC outlet): rising (+0.24) - This increase in temperature might be a result of inefficiencies in the HPC, which could lead to further degradation [4].
+
+ACTIONS:
+1. (Addresses s12) Inspect the high-pressure turbine for signs of wear or damage, as per [4].
+2. (Addresses s11) Perform a detailed analysis of the high-pressure compressor, focusing on potential stall margins, as per [1].
+3. (Addresses s3) Monitor the total temperature at the high-pressure compressor outlet closely, as it may provide further insights into the engine's degradation, as per [4].
+
+If no passage fits: No passage provides specific information about the observed symptoms in this case. It is recommended to consult the engine's maintenance manual for further guidance.
+
+Direction check: 3/3 key sensors correct | instrument actions left: 0

@@ -1,0 +1,59 @@
+INDEXED SOURCES: ['AC_33.90-1A.pdf', 'C-MAPSS.pdf', 'amt_powerplant_handbook.pdf']
+
+======================================================================
+LLM_ONLY | model llama3.1 | guard on
+Engine 34 | predicted RUL 6 | true RUL 7
+======================================================================
+STATUS: Engine 34 is predicted to fail within the next 6 cycles, indicating a high urgency for maintenance.
+
+KEY SENSORS:
+1. s12 (phi, ratio of fuel flow to Ps30): falling (-0.28) - suggests a potential issue with fuel flow or compressor efficiency.
+2. s11 (Ps30, static pressure at HPC outlet): rising (+0.25) - indicates a possible increase in compressor pressure, which could be a sign of wear.
+3. s9 (Nc, physical core speed (rpm)): falling (-0.06) - suggests a potential issue with the core's rotational speed, possibly due to turbine wear.
+
+ACTIONS:
+1. Inspect the compressor and turbine for signs of wear or damage, addressing the potential issue with compressor efficiency and core speed (observed symptoms: s12, s9).
+2. Monitor the engine's fuel flow and adjust as necessary to prevent further degradation (observed symptom: s12).
+3. Check the engine's cooling system, particularly the HPT and LPT coolants, to ensure they are functioning properly (observed symptoms: s20, s21).
+
+Direction check: 2/3 key sensors correct | instrument actions left: 0
+
+======================================================================
+RAG | model llama3.1 | guard on
+Engine 34 | predicted RUL 6 | true RUL 7
+======================================================================
+RETRIEVED PASSAGES:
+  [1] (meaning search) C-MAPSS.pdf p.3 (similarity 0.60): n Figure 3 and Figure 4, respectively. Efficiency HPC Stall Margin (SmHPC) - HPC Fault -0.16 -0.14 -0.12 -0.1 -0.08 -0.06 -0.04 -0.02 0 -0.1...
+  [2] (meaning search) amt_powerplant_handbook.pdf p.428 (similarity 0.54): 10-60 Indicated Malfunction Probable Causes Suggested Action • Engine pressure ratio indication has high reading error. • Engine pressure ra...
+  [3] (action search) amt_powerplant_handbook.pdf p.412 (similarity 0.65): should be followed when performing inspections or maintenance. Maintenance information presented in this section is not intended to specify ...
+  [4] (action search) C-MAPSS.pdf p.5 (similarity 0.51): ems. Although it’s not considered abnormal, it can make a difference i n useful operational life of a component. Initial wear can a lso be m...
+
+FIRST ANSWER (before guardrail):
+STATUS: Engine 34 is predicted to fail in 6 cycles, indicating a high urgency for maintenance.
+
+KEY SENSORS:
+1. s12 (phi, ratio of fuel flow to Ps30): falling (-0.28) - suggests loss of compressor or turbine efficiency.
+2. s11 (Ps30, static pressure at HPC outlet): rising (+0.25) - suggests possible turbine damage and/or loss of turbine efficiency.
+3. s3 (T30, total temperature at HPC outlet): rising (+0.24) - suggests possible turbine damage.
+
+ACTIONS:
+1. Inspect the turbine discharge pressure probe or line to transmitter for leaks, as a leaking line can cause a high reading error in engine pressure ratio indication. [2]
+2. Check the turbine for damage, as a damaged turbine can cause a loss of turbine efficiency. [2]
+3. Monitor the engine's fan and core speeds, as a decrease in these speeds can indicate engine wear. [4]
+
+GUARDRAIL flagged 1 action(s); asked for a rewrite.
+
+REVISED ANSWER:
+STATUS: Engine 34 is predicted to fail in 6 cycles, indicating a high urgency for maintenance.
+
+KEY SENSORS:
+1. s12 (phi, ratio of fuel flow to Ps30): falling (-0.28) - suggests loss of compressor or turbine efficiency.
+2. s11 (Ps30, static pressure at HPC outlet): rising (+0.25) - suggests possible turbine damage and/or loss of turbine efficiency.
+3. s3 (T30, total temperature at HPC outlet): rising (+0.24) - suggests possible turbine damage.
+
+ACTIONS:
+1. Inspect the compressor section for damage, as damage in this section can cause a loss of compressor or turbine efficiency. [2]
+2. Check the turbine for damage, as a damaged turbine can cause a loss of turbine efficiency. [2]
+3. Monitor the engine's fan and core speeds, as a decrease in these speeds can indicate engine wear. [4]
+
+Direction check: 3/3 key sensors correct | instrument actions left: 0
